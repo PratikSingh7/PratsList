@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Prat's List</title>
+</head>
+<body>
+<nav class="#006064 cyan darken-4 white-text">
+  <div class="nav-wrapper container ">
+    <a href="" class="brand-logo">Prat's List</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="">Messages<span class="new badge">4</span></a></li>
+      <li><a href="">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+<h1  style="text-align:center">What are you Looking for?
+    </h1>
+</div>
+<div class="row container">
+    <div class="col s4 ">
+       <div class="center">
+           <i class="large material-icons dp48" style="color:#006064 ">network_check</i>
+           <p>Faster than ever</p>
+        </div>
+    </div>
+
+    <div class="col s4 ">
+       <div class="center ">
+           <i class="large material-icons dp48" style="color:#006064" >pageview</i>
+           <p> Filter your searches based on price</p>
+       </div>
+    </div>
+
+    <div class="col s4">
+        <div class="center">
+            <i class="large material-icons dp48"  style="color:#006064">subtitles</i>
+            <p> A much better replacement for Craig'sList</p>
+        </div>
+    </div>
+
+</div>
+<div class="center container">
+
+    <form action="{%url 'new_search'%}" method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="Search" name="search">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+  </button>
+    </form>
+</div>
+
+{%block content%}
+{%endblock%}
+</body>
+</html>
